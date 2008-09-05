@@ -1,0 +1,18 @@
+<h1>Dashboard</h1>
+
+<h2>Recent orders</h2>
+<ul>
+<% @orders.each do |order| %>
+  <li><%= render :partial => 'order', :object => order %></li>
+<% end %>
+</ul>
+
+<h2>Recent articles</h2>
+<% @articles.each do |article| %>
+  <%= render :partial => 'article', :object => article %>
+<% end %>
+
+<h2>All Products</h2>
+<% @products.each do |product| %>
+  <%= render :partial => 'product', :object => product %>
+<% end %>

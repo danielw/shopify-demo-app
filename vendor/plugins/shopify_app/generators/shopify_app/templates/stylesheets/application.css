@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  text-align: center;
+  font: 1em/1.3em "Lucida Grande", Arial, Arial, sans-serif; 
+  color: #333;
+  background-color: #EEF2E5;
+}
+
+h4 {
+	margin: 0px;
+}
+/* Links */
+a {
+  color: #417B9F;
+}
+
+a:hover {
+  color: #1438CC;
+}
+
+dt {
+	display: inline;
+	clear: left;
+	font-weight: bold;
+}
+
+dd { 
+	display: inline;
+}
+
+/* IDS */
+
+#container {
+  background: #fff;
+  padding: 0;
+  text-align: left;
+  font-size: 80%;
+  margin:  0 50px;
+	padding: 8px;
+  min-width: 708px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  bottom: 1px;
+  position: relative;
+}
+
+/* Flash */
+#flasherrors {
+	background-color: #E7E7E7;
+	color: #E11;
+}
+
+#flashnotices {
+	background-color: #E7E7E7;
+	color: #1E1;
+}
+
+ul#nav {
+	list-style-type: none;
+} 
+
+#nav li {
+  margin: 0 15px 15px 0;
+  text-align: center;
+  background: #ddd;
+  padding: 5px;
+  border: 1px solid #ccc;
+	display: inline;
+}
+
+#nav li:hover {
+  border: 1px solid #AAA;
+	color: #D00 !important;
+}
+
+#nav li a:hover {
+	color: #D00;
+}
+
+
+/* Footer */
+#footer {
+  margin: 10px auto;
+  font-size: 70%;
+  color: #996;
+  clear: both;
+}
+
+#footer ul {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#footer ul li {
+	display: inline;
+  margin-right: 5px;
+}
+
+#footer a {
+  color: #996;
+}
+
+#footer a:hover {
+  color: #663;
+}
+
+/* CLASSES */
+
+.group {
+	padding: 2px 8px;
+	background-color: #F7F7F7;
+	border: 1px solid #CCC;
+	margin-bottom: 4px; 
+}
+
+.hint {
+	color: #777;
+  font-size: 11px;
+	font-weight: normal;
+  font-style: italic;
+}
+
+.description {
+	margin: 0px 0px 0px 4px; 
+	font-weight: normal;
+}
+
+.info {
+	padding: 8px;
+	margin: 8px 16px;
+	font-size: 90%;
+	background-color: #eaf2f5;
+	width: 75%;
+}
+
+.tagline {
+	style="margin: 16px 0px 32px 48px;"
+}
+
+/* Products */
+.image {
+	padding: 1px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+table.product_details {
+	margin-left: 130px;
+}
+
+.body {
+	font-size: 90%;
+}
+
+/* Orders */
+.pay_status {
+	padding: 1px 4px; 
+	margin: 0px 8px;
+	color: #fff; 
+}
+
+
+/* Clearfix */
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-table;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */

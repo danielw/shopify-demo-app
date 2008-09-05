@@ -1,0 +1,32 @@
+<div id="left">
+  <h2 class="orange">Login</h2>
+
+  <p>
+    Before you can use this application you have to register it with a shop to allow access to the shop's data.
+  </p>
+
+  <div class="light">
+  <% form_tag :controller => 'login', :action => 'authenticate' do %>
+    <label for='shop'><strong>The URL of the Shop</strong>
+      <span class="note">(or its <strong>myshopify.com</strong> subdomain)</span>
+    </label>
+    <p>
+      <%= text_field_tag 'shop', {}, :style => "width: 240px" %>  <%= submit_tag 'Authenticate' %>
+    </p>
+  <% end %>
+  </div>
+
+</div>
+
+<div id="right">
+
+  <h2 class="green">About</h2>
+
+  <div id="about">  
+    <p>This is a demonstration Shopify application, that shows you some examples what you can do with the Shopify API.</p>
+    <p>For more information visit our <a href="http://www.shopify.com/developers/api/">developer page</a> or read the <a href="http://www.shopify.com/developers/api/">documentation</a>.</p>
+  </div>
+
+</div>
+
+

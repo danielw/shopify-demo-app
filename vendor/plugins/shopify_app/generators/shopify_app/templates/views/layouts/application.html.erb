@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	  <title>Shopify Application</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'prototype' %>
+	</head>
+<body>
+  <!-- Flash error & notice-->
+  <% if flash[:error] %> <div id="flasherrors"><%= flash[:error] %></div><% end %>
+  <% if flash[:notice] %><div id="flashnotices"><%= flash[:notice] %></div><% end %>
+  
+  <ul id="nav">
+    <li><%= link_to_unless_current 'Welcome', '/dashboard/welcome' %></li>      
+    <li><%= link_to_unless_current 'Login', '/login' %></li>      
+    <li><%= link_to_unless_current 'Dashboard', '/dashboard' %></li>      
+    <% if current_shop %>
+      <li><%= link_to 'Go to the shop', "http://#{current_shop.url}" %></li>
+    <% end %>
+  </ul>
+  
+    <div id="container" class="clearfix">
+      <div id="main">   
+        <%= @content_for_layout %>
+      </div>
+    </div>
+    
+    <div id="footer">
+      <ul>
+        <li><%= link_to 'API Documentation', 'http://www.shopify.com/developers/api' %></li>      
+        <li><%= link_to 'Forum', "http://forums.shopify.com/community", :target => 'Shopify-Forum' %></li>
+        <li><%= link_to 'Blog', "http://blog.shopify.com/", :target => 'Shopify-Weblog' %></li>
+      </ul>
+    </div>
+          
+	</body>
+</html>
+

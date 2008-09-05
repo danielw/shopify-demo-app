@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="MSSmartTagsPreventParsing" content="true" />
+
+  <title>Shopify Application</title>
+
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'prototype' %>
+</head>
+	
+<body>
+  
+  <div id="header">
+    <h1><%= link_to 'Shopify Demo Application', '/' %></h1>
+  </div>
+  
+  <div id="subheader">
+
+    <p id="login-link">      
+      <% if current_shop %>
+        <span class="note">current shop</span> <%= current_shop.url %> <span class="note">|</span> <%= link_to 'logout', :controller => "login", :action => 'logout' %>
+      <% end %>
+    </p>
+  
+    <ul style="position: absolute;width: 700px">
+      <li onclick="document.location='/'"><%= link_to_unless_current 'Home', '/' %></li>      
+
+      <% if current_shop %>
+        <li onclick="document.location='<%= "http://#{current_shop.url}" %>'"><%= link_to 'Go to the shop', "http://#{current_shop.url}" %></li>
+      <% end %>
+
+      <% if @content_for_navigation %>
+        <%= @content_for_navigation %>
+      <% end %>
+    </ul>
+  
+  </div>
+
+  <div id="container" class="clearfix">
+    
+    <% unless controller.class.name =~ /Login/ %>
+      <ul id="tabs">
+        <%= tab :index, 'Dashboard' %>
+        <%= tab :design, 'Design Help' %>
+      </ul>
+    <% end %>
+  
+    <!-- Flash error & notice-->
+    <% if flash[:error] %> <div id="flasherrors"><%= flash[:error] %></div><% end %>
+    <% if flash[:notice] %><div id="flashnotices"><%= flash[:notice] %></div><% end %>
+  
+    <!-- begin div.main-->
+    <div id="main">
+      <%= @content_for_layout %>   
+    </div>
+    <!-- end div.main -->
+        
+  </div>
+    
+</body>
+</html>

@@ -1,0 +1,10 @@
+<% status_color = (order.financial_status == 'paid' ? '#0a0' : '#a00') %>
+
+<h4 style="display: inline">
+  <%= link_to order.name, "http://#{current_shop.url}/admin/orders/#{order.id}" %>
+</h4>
+<%= order.total_price %> <%= order.currency %>
+<span class="pay_status" style="background-color: <%= status_color %>">
+  <%= order.financial_status %>
+</span>
+by <span class='hint'><%= order.billing_address.name %></span>

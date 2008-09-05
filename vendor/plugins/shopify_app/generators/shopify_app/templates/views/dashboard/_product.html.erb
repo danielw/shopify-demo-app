@@ -1,0 +1,33 @@
+<div class="group">
+  <div class="image" style="float: left;">
+    <%= image_tag product.images.first.small rescue '' %>
+  </div>
+
+  <!-- Product type & vendor-->
+  <table border="0" class="product_details">
+    <tr>
+      <td colspan="2">
+        <% content_tag :h4, :style => 'clear:left;' do%>
+          <%= link_to product.title, "http://#{current_shop.url}/admin/products/#{product.id}" %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td width="100px;"><strong>Price:</strong></td>
+      <td><%= product.price_range %> <%= current_shop.shop.currency %></td>
+    </tr>
+    <tr>
+      <td><strong>Type:</strong></td>
+      <td><%= product.product_type %></td>
+    </tr>
+    <tr>
+      <td><strong>Vendor:</strong></td>
+      <td><%= product.vendor %></td>
+    </tr>
+
+  </table>
+
+  <div class="body">
+    <%= truncate(product.body_html, 128) %>
+  </div>
+</div>

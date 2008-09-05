@@ -1,0 +1,15 @@
+<div class="group">
+    <% content_tag :h4, :style => 'display: inline' do %>
+      <%= link_to article.title, "http://#{current_shop.url}/admin/blogs/#{article.prefix_options[:blog_id]}/articles/#{article.id}" %>
+    <% end %>
+	  <span class="description body">
+	    <% if article.published_at.nil? %> written <% else %> published <% end %>
+	    <%= distance_of_time_in_words(Time.now, article.updated_at) %> ago by 
+	    <span class='hint'><%= article.author %></span>
+	    <% if article.published_at.nil? %><span class='status-hidden'>hidden</span><% end %>
+	  </span> 
+
+  <!-- show truncated description but without any images -->
+  <div class="body"><%= truncate(article.body_html.gsub(/<img.+\/>/, ''), 128) %></div>
+
+</div>
